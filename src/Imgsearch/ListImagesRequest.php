@@ -15,14 +15,42 @@ class ListImagesRequest extends Model
      */
     public $dbName;
     /**
-     * @description fromScrollId
+     * @description token
      *
      * @var string
      */
-    public $fromScrollId;
+    public $token;
+    /**
+     * @description offset
+     *
+     * @var int
+     */
+    public $offset;
+    /**
+     * @description limit
+     *
+     * @var int
+     */
+    public $limit;
+    /**
+     * @description order
+     *
+     * @var string
+     */
+    public $order;
+    /**
+     * @description entityIdPrefix
+     *
+     * @var string
+     */
+    public $entityIdPrefix;
     protected $_name = [
-        'dbName'       => 'DbName',
-        'fromScrollId' => 'FromScrollId',
+        'dbName'         => 'DbName',
+        'token'          => 'Token',
+        'offset'         => 'Offset',
+        'limit'          => 'Limit',
+        'order'          => 'Order',
+        'entityIdPrefix' => 'EntityIdPrefix',
     ];
 
     public function validate()
@@ -32,9 +60,13 @@ class ListImagesRequest extends Model
 
     public function toMap()
     {
-        $res                 = [];
-        $res['DbName']       = $this->dbName;
-        $res['FromScrollId'] = $this->fromScrollId;
+        $res                   = [];
+        $res['DbName']         = $this->dbName;
+        $res['Token']          = $this->token;
+        $res['Offset']         = $this->offset;
+        $res['Limit']          = $this->limit;
+        $res['Order']          = $this->order;
+        $res['EntityIdPrefix'] = $this->entityIdPrefix;
 
         return $res;
     }
@@ -50,8 +82,20 @@ class ListImagesRequest extends Model
         if (isset($map['DbName'])) {
             $model->dbName = $map['DbName'];
         }
-        if (isset($map['FromScrollId'])) {
-            $model->fromScrollId = $map['FromScrollId'];
+        if (isset($map['Token'])) {
+            $model->token = $map['Token'];
+        }
+        if (isset($map['Offset'])) {
+            $model->offset = $map['Offset'];
+        }
+        if (isset($map['Limit'])) {
+            $model->limit = $map['Limit'];
+        }
+        if (isset($map['Order'])) {
+            $model->order = $map['Order'];
+        }
+        if (isset($map['EntityIdPrefix'])) {
+            $model->entityIdPrefix = $map['EntityIdPrefix'];
         }
 
         return $model;
