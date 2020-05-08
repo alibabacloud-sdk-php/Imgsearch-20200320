@@ -2,12 +2,19 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Imgsearch\V20200320\Imgsearch;
+namespace AlibabaCloud\SDK\Imgsearch\V20200320\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class SearchImageRequest extends Model
+class SearchImageAdvanceRequest extends Model
 {
+    /**
+     * @description ImageUrlObject
+     *
+     * @var Stream
+     */
+    public $imageUrlObject;
+
     /**
      * @description dbName
      *
@@ -16,37 +23,30 @@ class SearchImageRequest extends Model
     public $dbName;
 
     /**
-     * @description imageUrl
-     *
-     * @var string
-     */
-    public $imageUrl;
-
-    /**
      * @description limit
      *
      * @var int
      */
     public $limit;
     protected $_name = [
-        'dbName'   => 'DbName',
-        'imageUrl' => 'ImageUrl',
-        'limit'    => 'Limit',
+        'imageUrlObject' => 'ImageUrlObject',
+        'dbName'         => 'DbName',
+        'limit'          => 'Limit',
     ];
 
     public function validate()
     {
+        Model::validateRequired('imageUrlObject', $this->imageUrlObject, true);
         Model::validateRequired('dbName', $this->dbName, true);
-        Model::validateRequired('imageUrl', $this->imageUrl, true);
         Model::validateRequired('limit', $this->limit, true);
     }
 
     public function toMap()
     {
-        $res             = [];
-        $res['DbName']   = $this->dbName;
-        $res['ImageUrl'] = $this->imageUrl;
-        $res['Limit']    = $this->limit;
+        $res                   = [];
+        $res['ImageUrlObject'] = $this->imageUrlObject;
+        $res['DbName']         = $this->dbName;
+        $res['Limit']          = $this->limit;
 
         return $res;
     }
@@ -54,16 +54,16 @@ class SearchImageRequest extends Model
     /**
      * @param array $map
      *
-     * @return SearchImageRequest
+     * @return SearchImageAdvanceRequest
      */
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['ImageUrlObject'])) {
+            $model->imageUrlObject = $map['ImageUrlObject'];
+        }
         if (isset($map['DbName'])) {
             $model->dbName = $map['DbName'];
-        }
-        if (isset($map['ImageUrl'])) {
-            $model->imageUrl = $map['ImageUrl'];
         }
         if (isset($map['Limit'])) {
             $model->limit = $map['Limit'];

@@ -2,12 +2,12 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Imgsearch\V20200320\Imgsearch;
+namespace AlibabaCloud\SDK\Imgsearch\V20200320\Models;
 
-use AlibabaCloud\SDK\Imgsearch\V20200320\Imgsearch\ListImageDbsResponse\data;
+use AlibabaCloud\SDK\Imgsearch\V20200320\Models\AddImageResponse\data;
 use AlibabaCloud\Tea\Model;
 
-class ListImageDbsResponse extends Model
+class AddImageResponse extends Model
 {
     /**
      * @description requestId
@@ -19,7 +19,7 @@ class ListImageDbsResponse extends Model
     /**
      * @description data
      *
-     * @var ListImageDbsResponse.data
+     * @var AddImageResponse.data
      */
     public $data;
     protected $_name = [
@@ -45,7 +45,7 @@ class ListImageDbsResponse extends Model
     /**
      * @param array $map
      *
-     * @return ListImageDbsResponse
+     * @return AddImageResponse
      */
     public static function fromMap($map = [])
     {
@@ -54,7 +54,7 @@ class ListImageDbsResponse extends Model
             $model->requestId = $map['RequestId'];
         }
         if (isset($map['Data'])) {
-            $model->data = ListImageDbsResponse\data::fromMap($map['Data']);
+            $model->data = data::fromMap($map['Data']);
         }
 
         return $model;

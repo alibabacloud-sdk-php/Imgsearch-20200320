@@ -2,31 +2,31 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Imgsearch\V20200320\Imgsearch\AddImageResponse;
+namespace AlibabaCloud\SDK\Imgsearch\V20200320\Models\ListImageDbsResponse\data;
 
 use AlibabaCloud\Tea\Model;
 
-class data extends Model
+class dbList extends Model
 {
     /**
-     * @description dataId
+     * @description name
      *
      * @var string
      */
-    public $dataId;
+    public $name;
     protected $_name = [
-        'dataId' => 'DataId',
+        'name' => 'Name',
     ];
 
     public function validate()
     {
-        Model::validateRequired('dataId', $this->dataId, true);
+        Model::validateRequired('name', $this->name, true);
     }
 
     public function toMap()
     {
-        $res           = [];
-        $res['DataId'] = $this->dataId;
+        $res         = [];
+        $res['Name'] = $this->name;
 
         return $res;
     }
@@ -34,13 +34,13 @@ class data extends Model
     /**
      * @param array $map
      *
-     * @return data
+     * @return dbList
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['DataId'])) {
-            $model->dataId = $map['DataId'];
+        if (isset($map['Name'])) {
+            $model->name = $map['Name'];
         }
 
         return $model;

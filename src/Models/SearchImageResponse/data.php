@@ -2,8 +2,9 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Imgsearch\V20200320\Imgsearch\SearchImageResponse;
+namespace AlibabaCloud\SDK\Imgsearch\V20200320\Models\SearchImageResponse;
 
+use AlibabaCloud\SDK\Imgsearch\V20200320\Models\SearchImageResponse\data\matchList;
 use AlibabaCloud\Tea\Model;
 
 class data extends Model
@@ -50,7 +51,7 @@ class data extends Model
                 $model->matchList = [];
                 $n                = 0;
                 foreach ($map['MatchList'] as $item) {
-                    $model->matchList[$n++] = null !== $item ? SearchImageResponse\data\matchList::fromMap($item) : $item;
+                    $model->matchList[$n++] = null !== $item ? matchList::fromMap($item) : $item;
                 }
             }
         }

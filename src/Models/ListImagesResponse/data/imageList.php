@@ -2,11 +2,11 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Imgsearch\V20200320\Imgsearch\SearchImageResponse\data;
+namespace AlibabaCloud\SDK\Imgsearch\V20200320\Models\ListImagesResponse\data;
 
 use AlibabaCloud\Tea\Model;
 
-class matchList extends Model
+class imageList extends Model
 {
     /**
      * @description dataId
@@ -28,10 +28,26 @@ class matchList extends Model
      * @var string
      */
     public $entityId;
+
+    /**
+     * @description updatedAt
+     *
+     * @var int
+     */
+    public $updatedAt;
+
+    /**
+     * @description createdAt
+     *
+     * @var int
+     */
+    public $createdAt;
     protected $_name = [
         'dataId'    => 'DataId',
         'extraData' => 'ExtraData',
         'entityId'  => 'EntityId',
+        'updatedAt' => 'UpdatedAt',
+        'createdAt' => 'CreatedAt',
     ];
 
     public function validate()
@@ -39,6 +55,8 @@ class matchList extends Model
         Model::validateRequired('dataId', $this->dataId, true);
         Model::validateRequired('extraData', $this->extraData, true);
         Model::validateRequired('entityId', $this->entityId, true);
+        Model::validateRequired('updatedAt', $this->updatedAt, true);
+        Model::validateRequired('createdAt', $this->createdAt, true);
     }
 
     public function toMap()
@@ -47,6 +65,8 @@ class matchList extends Model
         $res['DataId']    = $this->dataId;
         $res['ExtraData'] = $this->extraData;
         $res['EntityId']  = $this->entityId;
+        $res['UpdatedAt'] = $this->updatedAt;
+        $res['CreatedAt'] = $this->createdAt;
 
         return $res;
     }
@@ -54,7 +74,7 @@ class matchList extends Model
     /**
      * @param array $map
      *
-     * @return matchList
+     * @return imageList
      */
     public static function fromMap($map = [])
     {
@@ -67,6 +87,12 @@ class matchList extends Model
         }
         if (isset($map['EntityId'])) {
             $model->entityId = $map['EntityId'];
+        }
+        if (isset($map['UpdatedAt'])) {
+            $model->updatedAt = $map['UpdatedAt'];
+        }
+        if (isset($map['CreatedAt'])) {
+            $model->createdAt = $map['CreatedAt'];
         }
 
         return $model;

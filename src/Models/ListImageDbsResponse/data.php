@@ -2,8 +2,9 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Imgsearch\V20200320\Imgsearch\ListImageDbsResponse;
+namespace AlibabaCloud\SDK\Imgsearch\V20200320\Models\ListImageDbsResponse;
 
+use AlibabaCloud\SDK\Imgsearch\V20200320\Models\ListImageDbsResponse\data\dbList;
 use AlibabaCloud\Tea\Model;
 
 class data extends Model
@@ -50,7 +51,7 @@ class data extends Model
                 $model->dbList = [];
                 $n             = 0;
                 foreach ($map['DbList'] as $item) {
-                    $model->dbList[$n++] = null !== $item ? ListImageDbsResponse\data\dbList::fromMap($item) : $item;
+                    $model->dbList[$n++] = null !== $item ? dbList::fromMap($item) : $item;
                 }
             }
         }

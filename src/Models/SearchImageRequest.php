@@ -2,11 +2,11 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Imgsearch\V20200320\Imgsearch;
+namespace AlibabaCloud\SDK\Imgsearch\V20200320\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class DeleteImageRequest extends Model
+class SearchImageRequest extends Model
 {
     /**
      * @description dbName
@@ -16,27 +16,37 @@ class DeleteImageRequest extends Model
     public $dbName;
 
     /**
-     * @description entityId
+     * @description imageUrl
      *
      * @var string
      */
-    public $entityId;
+    public $imageUrl;
+
+    /**
+     * @description limit
+     *
+     * @var int
+     */
+    public $limit;
     protected $_name = [
         'dbName'   => 'DbName',
-        'entityId' => 'EntityId',
+        'imageUrl' => 'ImageUrl',
+        'limit'    => 'Limit',
     ];
 
     public function validate()
     {
         Model::validateRequired('dbName', $this->dbName, true);
-        Model::validateRequired('entityId', $this->entityId, true);
+        Model::validateRequired('imageUrl', $this->imageUrl, true);
+        Model::validateRequired('limit', $this->limit, true);
     }
 
     public function toMap()
     {
         $res             = [];
         $res['DbName']   = $this->dbName;
-        $res['EntityId'] = $this->entityId;
+        $res['ImageUrl'] = $this->imageUrl;
+        $res['Limit']    = $this->limit;
 
         return $res;
     }
@@ -44,7 +54,7 @@ class DeleteImageRequest extends Model
     /**
      * @param array $map
      *
-     * @return DeleteImageRequest
+     * @return SearchImageRequest
      */
     public static function fromMap($map = [])
     {
@@ -52,8 +62,11 @@ class DeleteImageRequest extends Model
         if (isset($map['DbName'])) {
             $model->dbName = $map['DbName'];
         }
-        if (isset($map['EntityId'])) {
-            $model->entityId = $map['EntityId'];
+        if (isset($map['ImageUrl'])) {
+            $model->imageUrl = $map['ImageUrl'];
+        }
+        if (isset($map['Limit'])) {
+            $model->limit = $map['Limit'];
         }
 
         return $model;

@@ -2,11 +2,11 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Imgsearch\V20200320\Imgsearch;
+namespace AlibabaCloud\SDK\Imgsearch\V20200320\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class SearchImageAdvanceRequest extends Model
+class AddImageAdvanceRequest extends Model
 {
     /**
      * @description ImageUrlObject
@@ -23,22 +23,30 @@ class SearchImageAdvanceRequest extends Model
     public $dbName;
 
     /**
-     * @description limit
+     * @description extraData
      *
-     * @var int
+     * @var string
      */
-    public $limit;
+    public $extraData;
+
+    /**
+     * @description entityId
+     *
+     * @var string
+     */
+    public $entityId;
     protected $_name = [
         'imageUrlObject' => 'ImageUrlObject',
         'dbName'         => 'DbName',
-        'limit'          => 'Limit',
+        'extraData'      => 'ExtraData',
+        'entityId'       => 'EntityId',
     ];
 
     public function validate()
     {
         Model::validateRequired('imageUrlObject', $this->imageUrlObject, true);
         Model::validateRequired('dbName', $this->dbName, true);
-        Model::validateRequired('limit', $this->limit, true);
+        Model::validateRequired('entityId', $this->entityId, true);
     }
 
     public function toMap()
@@ -46,7 +54,8 @@ class SearchImageAdvanceRequest extends Model
         $res                   = [];
         $res['ImageUrlObject'] = $this->imageUrlObject;
         $res['DbName']         = $this->dbName;
-        $res['Limit']          = $this->limit;
+        $res['ExtraData']      = $this->extraData;
+        $res['EntityId']       = $this->entityId;
 
         return $res;
     }
@@ -54,7 +63,7 @@ class SearchImageAdvanceRequest extends Model
     /**
      * @param array $map
      *
-     * @return SearchImageAdvanceRequest
+     * @return AddImageAdvanceRequest
      */
     public static function fromMap($map = [])
     {
@@ -65,8 +74,11 @@ class SearchImageAdvanceRequest extends Model
         if (isset($map['DbName'])) {
             $model->dbName = $map['DbName'];
         }
-        if (isset($map['Limit'])) {
-            $model->limit = $map['Limit'];
+        if (isset($map['ExtraData'])) {
+            $model->extraData = $map['ExtraData'];
+        }
+        if (isset($map['EntityId'])) {
+            $model->entityId = $map['EntityId'];
         }
 
         return $model;

@@ -2,11 +2,11 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Imgsearch\V20200320\Imgsearch;
+namespace AlibabaCloud\SDK\Imgsearch\V20200320\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class DeleteImageResponse extends Model
+class CreateImageDbResponse extends Model
 {
     /**
      * @description requestId
@@ -34,7 +34,7 @@ class DeleteImageResponse extends Model
     /**
      * @param array $map
      *
-     * @return DeleteImageResponse
+     * @return CreateImageDbResponse
      */
     public static function fromMap($map = [])
     {

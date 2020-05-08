@@ -2,8 +2,9 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Imgsearch\V20200320\Imgsearch\ListImagesResponse;
+namespace AlibabaCloud\SDK\Imgsearch\V20200320\Models\ListImagesResponse;
 
+use AlibabaCloud\SDK\Imgsearch\V20200320\Models\ListImagesResponse\data\imageList;
 use AlibabaCloud\Tea\Model;
 
 class data extends Model
@@ -76,7 +77,7 @@ class data extends Model
                 $model->imageList = [];
                 $n                = 0;
                 foreach ($map['ImageList'] as $item) {
-                    $model->imageList[$n++] = null !== $item ? ListImagesResponse\data\imageList::fromMap($item) : $item;
+                    $model->imageList[$n++] = null !== $item ? imageList::fromMap($item) : $item;
                 }
             }
         }
